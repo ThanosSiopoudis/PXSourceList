@@ -427,20 +427,11 @@ NSString * const PXSLDeleteKeyPressedOnRowsNotification = @"PXSourceListDeleteKe
 					}
 					
                     //Use 10.6 NSImage drawing if we can
-                    if([icon respondsToSelector:@selector(drawInRect:fromRect:operation:fraction:respectFlipped:hints:)]) {
-                        [icon drawInRect:iconRect
-                                fromRect:NSZeroRect
-                               operation:NSCompositeSourceOver
-                                fraction:1
-                          respectFlipped:YES hints:nil];
-                    }
-                    else {
-                        [icon setFlipped:[self isFlipped]];
-                        [icon drawInRect:iconRect
-                                fromRect:NSZeroRect
-                               operation:NSCompositeSourceOver
-                                fraction:1];
-                    }
+                    [icon drawInRect:iconRect
+                            fromRect:NSZeroRect
+                           operation:NSCompositeSourceOver
+                            fraction:1
+                      respectFlipped:YES hints:nil];
 				}
 			}
 		}
